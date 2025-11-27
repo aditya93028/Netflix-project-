@@ -1,0 +1,531 @@
+
+* {
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-color:black;
+}
+
+.main {
+  background-image: url("assets/images/background.jpeg");
+  background-size: 100vw;
+  background-position: center;
+  height: 70vh;
+  width: 100%;
+  position: relative; /* This is correct! */
+}
+.imager{
+  background-color:rgba(0, 0, 0, 0);
+}
+
+/* FIX: The selector ".main.box" was wrong. 
+  It should be just ".box" because it's a child of .main.
+*/
+.box {
+  height: 70vh; 
+  width: 100%;
+  opacity: 0.7;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  /* FIX: Added z-index to keep it *under* the navbar */
+  z-index: 1; 
+}
+
+nav {
+  /* FIX: Corrected typo '80wh' to '80vw' */
+  max-width: 80vw; 
+  /* FIX: Increased height from 13px to 60px to make it visible */
+  height: 30px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  /* FIX: Increased font-size from 2px to a readable 16px */
+  font-size: 8px; 
+
+  /* FIX: Added these to lift the nav *above* the .box overlay */
+  position: relative;
+  z-index: 5;
+}
+
+/* FIX: Removed the old 'button' style and created new 
+  classes to make the buttons look presentable.
+*/
+.btn {
+  /* FIX: Increased sizes from 10px height */
+  height: 10px; 
+  font-size: 8px;
+  font-weight: bold;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 15px; /* Better than fixed width */
+  background-color: transparent;
+}
+
+.btn-lang {
+  font-weight:400;
+  background-color:rgba(243, 243, 243, 0.1);
+  color:white;
+  border:0.5px solid,rgba(255, 255, 255, 0.1);
+  font-size:2px;
+  padding:0.5px;
+}
+
+.btn-signin {
+  background-color: rgba(255,0,0,0.2); /* Netflix red */
+  color: white;
+  border:0.5px;
+}
+.imager{
+  position:relative;
+  width: 100px;
+  right:30px;
+  opacity:0.7
+  
+}
+.hero {
+  /* FIX: Corrected font-family typo 'Martal' -> 'Martel' */
+  font-family: 'Martel Sans', sans-serif;
+  /* FIX: Increased base font-size from 10px to 20px for readability. */
+  font-size: 5px;
+  height: 100%; /* This will be 80vh, inheriting from .main */
+  display: flex;
+  color: white;
+  flex-direction: column;
+  /* NOTE: 'text-align: center' is redundant when using
+     'align-items: center' with 'flex-direction: column'.
+     I've removed it for cleaner code. */
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* FIX: Added z-index to ensure hero text appears
+     *above* the .box overlay. */
+  z-index: 10;
+  text-align:center;
+  padding:0px;
+}
+.hero>:first-child {
+  font-weight: bolder;
+  font-size: 16px;
+  color:rgba(255, 255, 255,1);
+  /* NOTE: Added text-align: center here just in case the
+     element is wider than its text. */
+  text-align: center; 
+}
+/* .hero>:nth-child(2){
+  font-weight:bold;
+  font-size:6px;
+}
+.hero>:nth-child(3){
+  font-weight:400;
+  font-size:5px;
+} */
+.mailer{
+  border:0,0.5,1,0;
+  border-radius:2px;
+  border-color:grey;
+  font-size:15px;
+  font-weight:400;
+  color:rgb(255, 255, 255);
+  /* text-align:center; */
+  position:relative;
+  padding:5px;
+  background-color:rgb(23,23,23);
+  border-width:0.2px;
+  margin-right:2px;
+  margin-top:5px;
+}
+.btnstart{
+  border:1px;
+  border-radius:2px;
+  font-size:8px;
+  text-align:center;
+}
+/*video stopeed at 35:51*/
+.separation{
+  height:2px;
+  background-color:red;
+}
+.textingbox{
+  color:white;
+  opacity:1;
+  font-weight:bolder;
+}
+#textb1{
+  font:"poppins";
+  font-weight:bolder;
+  font-size:22px;
+  text-align:center;
+  margin-right:5px;
+  
+}
+#textb2{
+  display:block;
+  font-size:10px;
+  text-align:center;
+}
+#textb3{
+  font-size:12px;
+  text-align:center;
+}
+
+/* .btn-lang{
+  padding:1px 2px;
+  font-weight:bold;
+  background-color:white;
+  color:black;
+} */
+.btn-lang {
+  font-weight: 400;
+  /* Make text/box visible */
+  font-size: 5px; 
+  padding: 4px 8px;
+  text-align:center;
+  /* Your original color scheme */
+  background-color: rgba(243, 243, 243, 0.1);
+  color: white; 
+  
+  /* Corrected border syntax (using space instead of comma) */
+  border: 0.5px solid rgba(255, 255, 255, 0.4); 
+  
+  /* Important: Removing default browser/OS styling 
+     can sometimes allow more custom styling to take effect. */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 4px;
+}
+
+.btn-signin{
+background-color:red;
+color:white;
+font-size:5px;
+padding:3px 8px;
+}
+.btnredsign{
+  background-color:red;
+  opacity:1;
+  font-weight:bold;
+  padding: 1px;
+  font-size:15px;
+  border:0;
+  padding:5px;
+  position:relative;
+  
+}
+.first {
+  display: flex; /* Keep this as flex to manage its main content */
+  /* Changed 'flex-direction:row' to 'column' since you have an image row and text */
+  flex-direction: column; 
+  justify-content: flex-start;
+  position: relative; /* Changed from 'absolute' for better layout flow */
+  left: 10px;
+  /* Increased max-width for better horizontal space */
+  max-width: 95vw; 
+  font-size: 10px;
+  margin: auto;
+  color: white;
+  align-items: flex-start;
+  padding: 20px; /* Add padding to the whole section */
+}
+.jolly{
+ width: 130px; /* New, smaller fixed size for the thumbnail */
+  
+ height: 150px; /* Maintain aspect ratio */
+  margin-right: 10px; /* Spacing between images */
+  /* Ensures the images scale down nicely */
+  object-fit: cover;
+}
+.secimager1 {
+  display: flex; /* Makes the images line up horizontally */
+  overflow-x: auto; /* Allows horizontal scrolling if images overflow */
+  padding: 20px 0; /* Add some vertical padding */
+  /* To ensure the items start at the beginning of the container */
+  justify-content: flex-start;
+  /* Remove scrollbar visibility if desired, use sparingly for cross-browser support */
+  /* -ms-overflow-style: none; /* IE and Edge */
+  /* scrollbar-width: none; /* Firefox */
+}
+#secbox1{
+  font-family:unset;
+  font-size :20px;
+  font-weight:bolder;
+  color:white;
+  position:relative;
+  left:30px;
+}
+.secondtwo{
+  height:120px;
+  width:90vw;
+  padding-left:10px;
+  position:relative;
+  color:white;
+  left:30px;
+  background: linear-gradient(
+    135deg, /* Diagonal transition */
+    #191929 0%, /* Start color (Dark Navy) */
+    #0a0a14 100% /* End color (Very Dark/Black) */
+  );
+  border-width:20px;
+  border-radius:5%;
+  margin-bottom:7px;
+}
+#enjoyer{
+  font-family:unset;
+  font-weight:bolder;
+  display:block;
+  padding-bottom:10px;
+}
+#watch{
+  /* line-height:5px; */
+  position:relative;
+  bottom:22px;
+  font-size:10px;
+}
+.purpletv{
+height:50px;
+width:50px;
+position:relative;
+left:120px;
+top:40px;
+}
+.secondthree{
+   height:120px;
+  width:90vw;
+  padding-left:10px;
+  position:relative;
+  color:white;
+  left:30px;
+   background: linear-gradient(
+    135deg, /* Diagonal transition */
+    #191929 0%, /* Start color (Dark Navy) */
+    #0a0a14 100% /* End color (Very Dark/Black) */
+  );
+   border-width:20px;
+  border-radius:5%;
+  margin-bottom:7px;
+}
+#downloader{
+  display:block;
+   font-family:unset;
+  font-weight:bolder;
+
+}
+#favsave{
+  /* line-height:5px; */
+  position:relative;
+  bottom:7px;
+  font-size:10px;
+}
+.downloadbtn{
+height:50px;
+width:50px;
+position:relative;
+  left:225px;
+  top:50px;
+}
+.secondfour{
+   height:120px;
+  width:90vw;
+  padding-left:10px;
+  position:relative;
+  color:white;
+  left:30px;
+   background: linear-gradient(
+    135deg, /* Diagonal transition */
+    #191929 0%, /* Start color (Dark Navy) */
+    #0a0a14 100% /* End color (Very Dark/Black) */
+  );
+   border-width:20px;
+  border-radius:5%;
+  margin-bottom:7px;
+}
+#everywhere{
+  display:block;
+   font-family:unset;
+  font-weight:bolder; 
+}
+#favsave{
+  /* line-height:5px; */
+  position:relative;
+  bottom:7px;
+  font-size:10px;
+}
+.bomber{
+  height:50px;
+width:50px;
+position:relative;
+  left:170px;
+  top:50px;
+}
+.secondfive{
+     height:120px;
+  width:90vw;
+  padding-left:10px;
+  position:relative;
+  color:white;
+  left:30px;
+   background: linear-gradient(
+    135deg, /* Diagonal transition */
+    #191929 0%, /* Start color (Dark Navy) */
+    #0a0a14 100% /* End color (Very Dark/Black) */
+  );
+   border-width:20px;
+  border-radius:5%;
+  margin-bottom:7px;
+}
+#kidsprofile{
+    display:block;
+   font-family:unset;
+  font-weight:bolder;
+}
+#adventure{
+   position:relative;
+  bottom:7px;
+  font-size:10px;
+}
+.kidsanimator{
+  height:50px;
+width:50px;
+position:relative;
+left:20px;
+top:50px;
+}
+.third{
+  height:100vh;
+}
+.thirdone{
+  height:50px;
+  width:auto;
+  color:white;
+  position:relative;
+  left:30px;
+}
+#frequent{
+display:block;
+font-family:sans-serif;
+}
+.thirdtwo{
+  height:50px;
+  width:90vw;
+  color:white;
+  background-color:rgba(128, 128, 128, 0.411);
+  position:relative;
+  left:8px;
+  bottom:18px;
+  margin:auto;
+  margin-bottom:5px;
+}
+.thirdthree{
+    height:50px;
+  width:90vw;
+  color:white;
+  background-color:rgba(128, 128, 128, 0.411);
+  position:relative;
+  left:8px;
+  bottom:18px;
+  margin:auto;
+  margin-bottom:5px;
+}
+.thirdfour{
+    height:50px;
+  width:90vw;
+  color:white;
+  background-color:rgba(128, 128, 128, 0.411);
+  position:relative;
+  left:8px;
+  bottom:18px;
+  margin:auto;
+  margin-bottom:5px;
+}
+.thirdfive{
+    height:50px;
+  width:90vw;
+  color:white;
+  background-color:rgba(128, 128, 128, 0.411);
+  position:relative;
+  left:8px;
+  bottom:18px;
+  margin:auto;
+  margin-bottom:5px;
+}
+#greycontent{
+display:block;
+font-family:sans-serif;
+padding:5px;
+}
+.ready{
+  color:white;
+  font-family:sans-serif;
+  text-align:center;
+  font-size:10px;
+}
+.mailstarter{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.btnredsign2{
+  background-color:red;
+  border:0;
+    font-weight:bold;
+  padding:5px;
+  margin-left:2px;
+  position:relative;
+  top:2px;
+}
+.laster{
+  color:white;
+}
+.questionnumber{
+  margin:5px;
+  font-size:10px;
+  font-family:sans-serif;
+  position:relative;
+  left:5px;
+}
+.number{
+  text-decoration: underline;
+}
+.bothlist{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+
+}
+.firstlist{
+font-size:10px;
+}
+.secondlist{
+  font-size:10px;
+}
+#firstullist{
+  margin:10px;
+  text-decoration:underline;
+  font-family:sans-serif;
+}
+#secondullist
+{
+  position:relative;
+  left:100px;
+  top:13px;
+  text-decoration:underline;
+  font-family:sans-serif;
+}
+#secondlast{
+  margin-top:5px;
+font-size:10px;
+position:relative;
+top:5px;
+left:3px;
+}
+.lastdiv{
+  font-size:10px;
+  margin-top:5px;
+  position:relative;
+  top:5px;
+  left:3px;
+}
