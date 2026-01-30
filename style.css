@@ -83,12 +83,12 @@ nav {
   position:relative;
   width: 100px;
   right:30px;
-  opacity:0.7
+  opacity:0.8;
   
 }
 .hero {
   /* FIX: Corrected font-family typo 'Martal' -> 'Martel' */
-  font-family: 'Martel Sans', sans-serif;
+  font-family: 'Martel Sans';
   /* FIX: Increased base font-size from 10px to 20px for readability. */
   font-size: 5px;
   height: 100%; /* This will be 80vh, inheriting from .main */
